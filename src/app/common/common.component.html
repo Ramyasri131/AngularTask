@@ -1,0 +1,93 @@
+<section class="d-flex">
+    <aside id="side-nav" class="d-flex">
+        <div class="side-bar">
+            <div class="logo d-flex">
+                <!-- <img src="../../assets/images/tezo-logo.png" id="tezo-logo" alt="tezo-logo" /> -->
+                <img src="/assets/images/tezo-logo.png" id="tezo-logo" alt="tezo-logo" />
+            </div>
+            <p class="side-bar-heading" id="defintion">ALL</p>
+            <a href="#" title="Dashboard" class="links">
+                <div class="dashboard d-flex">
+                    <img src="../assets/icons/dashboard.svg" alt="dashboard" />
+                    <span>Dashboard</span>
+                </div>
+            </a>
+            <a routerLink="/employee-table" title="Employess" class="links">
+                <div class="dashboard d-flex">
+                    <div class="employee-icon d-flex">
+                        <img src="../assets/icons/employees.svg" alt="employees-logo" />
+                        <span id="employee-tag">Employees</span>
+                    </div>
+                    <div class="employee-icon-after">
+                        <span>k</span>
+                    </div>
+
+                </div>
+            </a>
+            <div class="roles-user">
+                <p id="role-heading">ROLE / USER MANAGEMENT</p>
+                <a routerLink="/roles" title="Roles" class="links">
+                    <div class="roles d-flex">
+                        <div class="role-navigation d-flex"><img src="../assets/icons/roles.svg" alt="roles-icon"
+                                class="role-icon" />
+                            <span>Roles</span>
+                        </div>
+                        <img src="../assets/icons/rightarrow.png" id="right-arrow" alt="right-arrow" />
+
+                    </div>
+                </a>
+                <a href="#" title="Access rights" class="links">
+                    <div class="access-rights d-flex">
+                        <div class="role-navigation d-flex">
+                            <img src="../assets/icons/assign-user.svg" alt="assign_user" class="role-icon" />
+                            <span>Access right</span>
+                        </div>
+                        <img src="../assets/icons/rightarrow.png" id="right-arrow" alt="right-arrow" />
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="pop-up-box">
+            <div class="pop-up">
+                <p>Install new update 2.3.1A</p>
+                <span>Allow to launch the new update for the AD application</span>
+                <div class="btn-container d-flex">
+                    <button id="dismiss-btn" class="add-cursor-pointer">Dismiss</button>
+                    <button id="accept-btn" class="add-cursor-pointer">Accept</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="main-content">
+        <header class="header d-flex">
+            <div> <button type="submit" id="handle-logo" class="add-cursor-pointer"> <img
+                        src="../assets/icons/handle.png" alt="handle" /></button> </div>
+            <div class="search-bar d-flex">
+                <img src="../assets/icons/search.png" alt="search-icon" id="search" />
+                <input type="text" name="searchbar" placeholder="Search" id="searchBar" />
+                <div class="header-icon d-flex">
+                    <img src="../assets/icons/language.svg" alt="lang-logo" />
+                    <img src="../assets/icons/categories.svg" alt="category" />
+                    <img src="../assets/icons/mode.svg" alt="mode" />
+                    <img src="../assets/icons/notifications.svg" alt="notifications" />
+                </div>
+                <div class="profile d-flex">
+                    <img src="assets/profie-icon.png" alt="profile-icon" />
+                    <div class="status"></div>
+                    <div class="profile-name d-flex">
+                        <div>
+                            <p class="name-of-user">John Abraham</p>
+                            <span id="admin">Admin</span>
+                        </div>
+                        <img src="../assets/icons/down-arrow.png" alt="down-arrow" id="down-arrow"
+                            class="add-cursor-pointer" />
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <router-outlet />
+    </div>
+
+</section>

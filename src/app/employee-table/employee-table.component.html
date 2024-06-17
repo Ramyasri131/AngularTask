@@ -1,0 +1,206 @@
+<main class="employeetable-container">
+    <div class="employee-section d-flex">
+        <div class="employees">
+            <p>
+                Employees
+            </p>
+            <p id="note">
+                Find all of your company's employee accounts and their associated roles.
+            </p>
+        </div>
+        <div class="changes-icon d-flex">
+            <button class="export add-cursor-pointer" id="export">
+                <img src="assets/icons/export.svg" alt="export-icon" id="export-icon" />
+                <span>EXPORT</span>
+            </button>
+
+            <button class="add-employee add-cursor-pointer" (click)="onClick()">
+                <img src="../assets/icons/add.svg" alt="export-icon" id="export-icon" />
+                <span>ADD EMPLOYEE</span>
+            </button>
+        </div>
+    </div>
+    <div class="filter-section d-flex">
+        <div class="sort-icon add-cursor-pointer">
+            <img src="../assets/icons/filter.svg" alt="filter-icon" />
+        </div>
+        <div class="btn-section d-flex">
+            <button class="alphabets add-cursor-pointer">A</button>
+            <button class="alphabets add-cursor-pointer">B</button>
+            <button class="alphabets add-cursor-pointer">C</button>
+            <button class="alphabets add-cursor-pointer">D</button>
+            <button class="alphabets add-cursor-pointer">E</button>
+            <button class="alphabets add-cursor-pointer">F</button>
+            <button class="alphabets add-cursor-pointer">G</button>
+            <button class="alphabets add-cursor-pointer">H</button>
+            <button class="alphabets add-cursor-pointer">I</button>
+            <button class="alphabets add-cursor-pointer">J</button>
+            <button class="alphabets add-cursor-pointer">K</button>
+            <button class="alphabets add-cursor-pointer">L</button>
+            <button class="alphabets add-cursor-pointer">M</button>
+            <button class="alphabets add-cursor-pointer">N</button>
+            <button class="alphabets add-cursor-pointer">O</button>
+            <button class="alphabets add-cursor-pointer">P</button>
+            <button class="alphabets add-cursor-pointer">Q</button>
+            <button class="alphabets add-cursor-pointer">R</button>
+            <button class="alphabets add-cursor-pointer">S</button>
+            <button class="alphabets add-cursor-pointer">T</button>
+            <button class="alphabets add-cursor-pointer">U</button>
+            <button class="alphabets add-cursor-pointer">V</button>
+            <button class="alphabets add-cursor-pointer">W</button>
+            <button class="alphabets add-cursor-pointer">X</button>
+            <button class="alphabets add-cursor-pointer">Y</button>
+            <button class="alphabets add-cursor-pointer">Z</button>
+        </div>
+    </div>
+
+    <div class="advance-filter-section d-flex">
+        <div class="advance-filter d-flex">
+            <div class="filter-image d-flex">
+                <span id="filter-label">Filter</span>
+                <img src="../assets/icons/sort.png" alt="sort" id="sort-icon" class="add-cursor-pointer" />
+            </div>
+            <div>
+                <select name="status" class="dropdown add-cursor-pointer" id="statusDropDown">
+                    <option value="null" disabled selected>Status</option>
+                    <option value="Active">Active</option>
+                    <option value="In-Active">In-Active</option>
+                </select>
+                <select name="location" class="dropdown add-cursor-pointer" id="locationDropDown">
+                    <option value="null" disabled selected>Location</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+
+                <select name="department" class="dropdown add-cursor-pointer" id="deptDropDown">
+                    <option value="null" disabled selected>Department</option>
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="Product Engg">Product Engg</option>
+                    <option value="Quality Assurance">Quality Assurance</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="order-btn d-flex">
+            <div><button id="reset-btn" class="add-cursor-pointer">Reset</button>
+            </div>
+            <div><button id="apply-btn" class="add-cursor-pointer">Apply
+                </button></div>
+        </div>
+    </div>
+
+    <!-- table starts here -->
+    <section class="table-container">
+        <div class="delete-section d-flex">
+            <div class="delete-section-left d-flex">
+                <img src="../assets/icons/arrow-turn-left-down.svg" alt="turn left down" id="image-turn-left-down"
+                    class="add-cursor-pointer" />
+                <button id="delete-btn" class="add-cursor-pointer">Delete</button>
+            </div>
+
+            <div class="delete-section-right d-flex">
+                <img src="../assets/icons/table-add.svg" alt="table add" id="left-down" />
+            </div>
+        </div>
+        <div class="table-div">
+            <table class="table" id="employeeTable">
+                <thead class="t-head">
+                    <tr class="table-header">
+                        <th>
+                            <input type="checkbox" id="header-check-box">
+                        </th>
+                        <th class="user-heading">
+                            <div class="table-heading add-cursor-pointer d-flex">
+                                <span>USER</span>
+                                <img src="../assets/icons/up-and-down-arrow.png" alt="up and down" />
+                            </div>
+                        </th>
+                        <th class="location-heading">
+                            <div class="table-heading add-cursor-pointer  d-flex">
+                                <span>LOCATION</span>
+                                <img src="../assets/icons/up-and-down-arrow.png" alt="up and down" />
+                            </div>
+                        </th>
+                        <th class="department-heading">
+                            <div class="table-heading add-cursor-pointer  d-flex">
+                                <span>DEPARTMENT</span>
+                                <img src="../assets/icons/up-and-down-arrow.png" alt="up and down" />
+                            </div>
+                        </th>
+                        <th class="employee-role-heading">
+                            <div class="table-heading add-cursor-pointer  d-flex">
+                                <span>ROLE</span>
+                                <img src="../assets/icons/up-and-down-arrow.png" alt="up and down" />
+                            </div>
+                        </th>
+                        <th class="employee-number">
+                            <div class="table-heading add-cursor-pointer d-flex">
+                                <span>EMP NO</span>
+                                <img src="../assets/icons/up-and-down-arrow.png" alt="up and down" />
+                            </div>
+                        </th>
+                        <th class="status-heading">
+                            <div class="table-heading add-cursor-pointer d-flex">
+                                <span>STATUS</span>
+                                <img src="../assets/icons/up-and-down-arrow.png" alt="up and down" />
+                            </div>
+                        </th>
+                        <th class="join-date-heading">
+                            <div class="table-heading add-cursor-pointer d-flex">
+                                <span>JOIN DT</span>
+                                <img src="../assets/icons/up-and-down-arrow.png" alt="up and down" />
+                            </div>
+                        </th>
+                        <th>
+                            <img src="../assets/dots.png" alt="more-icon" class="more-options">
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody id="tbody">
+                    <tr *ngFor="let employee of employees">
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>
+                            <div class="user-data d-flex">
+                                <!-- <img src="assets/profie-icon.png" alt="profile-icon" /> -->
+                                <img src="assets/profie-icon.png" alt="profile-icon" />
+                                <div class="user-name">
+                                    <span class="name">{{employee.firstName+employee.lastName}}</span>
+                                    <span class="email">{{employee.email}}</span>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>
+                            <span class="name">{{employee.location}}</span>
+                        </td>
+                        <td>
+                            <span class="name">{{employee.department}}</span>
+                        </td>
+                        <td>
+                            <span class="name">{{employee.jobTitle}}</span>
+                        </td>
+                        <td>
+                            <span class="name">{{employee.id}}</span>
+                        </td>
+                        <td>
+                            <div class="active">
+                                <span class="name">Active</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="name">{{employee.dateOfJoin}}</span>
+                        </td>
+                        <td>
+                            <img src="assets/dots.png" alt="more-icon" id="more">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>

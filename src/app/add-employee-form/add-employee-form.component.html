@@ -1,0 +1,182 @@
+<!-- form -->
+<p class="page-heading">Add Employee</p>
+<form class="employee-form d-flex" [formGroup]="employeeDetailsForm" (ngSubmit)="employeeDeatilsSubmission()">
+    <div class="upload-image d-flex">
+        <img src="../assets/images/upload-image.png" id="display-image" alt="dummy upload image" />
+        <button class="file-upload add-cursor-pointer">
+            <input type="file" id="file" class="upload-image-btn add-cursor-pointer" />
+            <label for="file" class="image-upload">Edit</label>
+        </button>
+    </div>
+    <div class="details">
+        <div class="personal-info">
+            <span class="font-weight-500">Personal information</span>
+            <div class="form-heading">
+                <label for="empNo">Emp No</label>
+                <input type="text" placeholder="Text" class="user-input" id="empNo">
+                <p id="validEmpNo"></p>
+            </div>
+            <div class="row-display employee-input d-flex">
+                <div class="form-heading">
+                    <label for="firstName">First Name</label>
+                    <input type="text" placeholder="Text" class="user-input" id="firstName"
+                        formControlName="firstName" />
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.firstName.dirty ||  employeeDetailsForm.controls.firstName.touched) && employeeDetailsForm.controls.firstName.invalid&&employeeDetailsForm.controls.firstName.errors">
+                        <div *ngIf="employeeDetailsForm.controls.firstName.errors['required']">
+                            first name is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-heading">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" placeholder="Text" class="user-input " id="lastName"
+                        formControlName="lastName" />
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.lastName.dirty ||  employeeDetailsForm.controls.lastName.touched) && employeeDetailsForm.controls.lastName.invalid&&employeeDetailsForm.controls.lastName.errors">
+                        <div *ngIf="employeeDetailsForm.controls.lastName.errors['required']">
+                            lastname is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-heading">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" placeholder="Text" class="user-input  " id="dateOfBirth" formControlName="dateOfBirth"/>
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.dateOfBirth.dirty ||  employeeDetailsForm.controls.dateOfBirth.touched) && employeeDetailsForm.controls.dateOfBirth.invalid&&employeeDetailsForm.controls.dateOfBirth.errors">
+                        <div *ngIf="employeeDetailsForm.controls.dateOfBirth.errors['required']">
+                            Date Of Birth is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-display employee-input d-flex">
+                <div class="form-heading">
+                    <label for="mailId">Email Id</label>
+                    <input type="email" placeholder="joe.j@tezo.com" class="user-input  add-cursor-pointer" id="mailId"
+                        formControlName="email" />
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.email.dirty ||  employeeDetailsForm.controls.email.touched) && employeeDetailsForm.controls.email.invalid&&employeeDetailsForm.controls.email.errors">
+                        <div *ngIf="employeeDetailsForm.controls.email.errors['required']">
+                            Email is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-heading">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <input type="number" placeholder="0000000000" class="user-input" id="mobileNumber"
+                        pattern="[0-9]{10}" formControlName="mobileNumber" />
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.mobileNumber.dirty ||  employeeDetailsForm.controls.mobileNumber.touched) && employeeDetailsForm.controls.mobileNumber.invalid&&employeeDetailsForm.controls.mobileNumber.errors">
+                        <div *ngIf="employeeDetailsForm.controls.mobileNumber.errors['required']">
+                            Mobile Number is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="employee-info">
+            <span class="font-weight-500">Employee Information</span>
+            <div class="row-display employee-input d-flex">
+                <div class="form-heading ">
+                    <label for="joinDate">Joining Date</label>
+                    <input type="date" name="todaysdate" class="user-input add-cursor-pointer" id="joinDate" formControlName="dateOfJoin"/>
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.dateOfJoin.dirty ||  employeeDetailsForm.controls.dateOfJoin.touched) && employeeDetailsForm.controls.dateOfJoin.invalid&&employeeDetailsForm.controls.dateOfJoin.errors">
+                        <div *ngIf="employeeDetailsForm.controls.dateOfJoin.errors['required']">
+                            Date of join  is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-heading">
+                    <label for="dropDownLocation">Location</label>
+                    <select class="user-input  add-cursor-pointer" id="dropDownLocation" formControlName="location">
+                        <option value="" disabled selected>Location</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Banglore">Banglore</option>
+                    </select>
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.location.dirty ||  employeeDetailsForm.controls.location.touched) && employeeDetailsForm.controls.location.invalid&&employeeDetailsForm.controls.location.errors">
+                        <div *ngIf="employeeDetailsForm.controls.location.errors['required']">
+                            Location is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-display employee-input d-flex">
+                <div class="form-heading">
+                    <label for="roleDropDown">Role</label>
+                    <select name="job title" class="user-input add-cursor-pointer" id="roleDropDown" formControlName="role">
+                        <option value="" disabled selected></option>
+                        <option *ngFor="let role of roles">{{role.name}}</option>
+                    </select>
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.role.dirty ||  employeeDetailsForm.controls.role.touched) && employeeDetailsForm.controls.role.invalid&&employeeDetailsForm.controls.role.errors">
+                        <div *ngIf="employeeDetailsForm.controls.role.errors['required']">
+                            Role Name is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-heading">
+                    <label for="DepartmentDropDown">Department</label>
+                    <select name="department" class="user-input add-cursor-pointer" id="DepartmentDropDown" formControlName="department">
+                        <option value="" disabled selected>Department</option>
+                        <option value="Product Enggineering">Product Enggineering</option>
+                        <option value="Marketing">Marketing</option>
+                        <option value="Quality Assurance">Quality Assurance</option>
+                    </select>
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.department.dirty ||  employeeDetailsForm.controls.department.touched) && employeeDetailsForm.controls.department.invalid&&employeeDetailsForm.controls.department.errors">
+                        <div *ngIf="employeeDetailsForm.controls.department.errors['required']">
+                            department is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-display employee-input d-flex">
+                <div class="form-heading">
+                    <label for="assignManager">Assign Manager</label>
+                    <select name="Assign Manager" class="user-input add-cursor-pointer" id="assignManager" formControlName="manager">
+                        <option value="" disabled selected>Search</option>
+                        <option value="Sandeep">Sandeep</option>
+                        <option value="siva">siva</option>
+                    </select>
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.manager.dirty ||  employeeDetailsForm.controls.manager.touched) && employeeDetailsForm.controls.manager.invalid&&employeeDetailsForm.controls.manager.errors">
+                        <div *ngIf="employeeDetailsForm.controls.manager.errors['required']">
+                            Manager is required
+                        </div>
+                    </div>
+                </div>
+                <div class="form-heading">
+                    <label for="assignProject">Assign Project</label>
+                    <select name="Assign Project" class="user-input add-cursor-pointer" id="assignProject" formControlName="project">
+                        <option value="" disabled selected>Search</option>
+                        <option value="Geo Blue">Geo Blue</option>
+                        <option value="BNSI">BNSI</option>
+                    </select>
+                    <div
+                        *ngIf=" (employeeDetailsForm.controls.project.dirty ||  employeeDetailsForm.controls.project.touched) && employeeDetailsForm.controls.project.invalid&&employeeDetailsForm.controls.project.errors">
+                        <div *ngIf="employeeDetailsForm.controls.project.errors['required']">
+                            Project is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-buttons d-flex">
+            <button type="button" class="cancel-button add-cursor-pointer">
+                cancel
+            </button>
+            <button type="submit" class="submit-button add-cursor-pointer">
+                Add Employee
+            </button>
+            <button type="submit" class="edit-button add-cursor-pointer">
+                Edit
+            </button>
+            <button type="submit" class="save-button add-cursor-pointer">
+                Save
+            </button>
+        </div>
+    </div>
+</form>

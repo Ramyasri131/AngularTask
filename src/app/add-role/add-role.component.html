@@ -1,0 +1,88 @@
+<section class="add-role-form">
+    <p class="page-heading">Create New Role</p>
+    <form class="form-add-Role" name="add-role" [formGroup]="roleDetailsForm" (ngSubmit)="roleDeatilsSubmission()">
+        <div class="add-role-container">
+            <div class="details">
+                <div class="employee-details d-flex">
+                    <label for="role-name-input">Role Name</label>
+                    <input type="text" placeholder="Text" id="role-name-input" formControlName="name"/>
+                    <div
+                        *ngIf="(roleDetailsForm.controls.name.dirty ||  roleDetailsForm.controls.name.touched) && roleDetailsForm.controls.name.invalid&&roleDetailsForm.controls.name.errors">
+                        <div *ngIf="roleDetailsForm.controls.name.errors['required']">
+                            Role Name is required
+                        </div>
+                    </div>
+                </div>
+                <div class="employee-details d-flex">
+                    <label for="department-dropdown">Department</label>
+                    <select name="department" id="department-dropdown" class="add-cursor-pointer" formControlName="department">
+                        <option value="" disabled selected>Department</option>
+                        <option value="Product Engineering">Product Engineering</option>
+                        <option value="Quality Assurance">Quality Assurance</option>
+                        <option value="Marketing">Marketing</option>
+                    </select>
+                    <div
+                        *ngIf="(roleDetailsForm.controls.department.dirty ||  roleDetailsForm.controls.department.touched) && roleDetailsForm.controls.department.invalid&&roleDetailsForm.controls.department.errors">
+                        <div *ngIf="roleDetailsForm.controls.department.errors['required']">
+                            Department  is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="employee-details d-flex">
+                    <label for="description">Description</label>
+                    <textarea placeholder="Text" id="description" formControlName="description"></textarea>
+                    <div
+                        *ngIf=" (roleDetailsForm.controls.description.dirty ||  roleDetailsForm.controls.description.touched) && roleDetailsForm.controls.description.invalid&&roleDetailsForm.controls.description.errors">
+                        <div *ngIf="roleDetailsForm.controls.description.errors['required']">
+                            Description is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="employee-details d-flex">
+                    <label for="location-dropdown">Location</label>
+                    <select class="user-input  add-cursor-pointer" id="dropDownLocation" formControlName="location">
+                        <option value="" disabled selected>Location</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Banglore">Banglore</option>
+                    </select>
+                    <div
+                        *ngIf=" (roleDetailsForm.controls.location.dirty ||  roleDetailsForm.controls.location.touched) && roleDetailsForm.controls.location.invalid&&roleDetailsForm.controls.location.errors">
+                        <div *ngIf="roleDetailsForm.controls.location.errors['required']">
+                            Location is required
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="details">
+                <div class="employee-details d-flex">
+                    <label for="searchEmployee">Assign Employees</label>
+                    <div class="searchEmployee" id="search-emp">
+                        Search for an Employee
+                        <img src="../assets/icons/down-arrow.png" alt="down-arrow"
+                            class="add-role-downarrow" />
+                    </div>
+                    <div class="asssign-employees-container" id="assign-employee-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-buttons d-flex">
+            <button type="button" class="cancel-button add-cursor-pointer">
+                cancel
+            </button>
+            <button class="submit-button add-cursor-pointer">
+                Add Role
+            </button>
+            <button type="submit" class="edit-button add-cursor-pointer">
+                Edit
+            </button>
+            <button type="submit" class="save-button add-cursor-pointer">
+                Save
+            </button>
+        </div>
+    </form>
+</section>

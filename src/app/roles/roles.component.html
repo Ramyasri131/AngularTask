@@ -1,0 +1,83 @@
+<main class="add-role-page">
+    <!-- role section  -->
+    <div class="role-section d-flex">
+        <div class="role-desc d-flex">
+            <span>Roles</span>
+            <span class="text-color">All the roles are configured here</span>
+        </div>
+        <button class="add-role add-cursor-pointer d-flex" (click)="openAddRoleForm()">
+            <img src="../assets/icons/add.svg" alt="add" id="add" />
+            <span>Add Role</span>
+        </button>
+    </div>
+
+    <!-- filter section -->
+    <div class="filter-section d-flex">
+        <div class="filter-section-left d-flex">
+            <div class="filter-btn d-flex">
+                <span id="filter">Filter</span>
+                <img src="../assets/icons/sort.png" alt="filter" id="filter-icon" />
+            </div>
+            <div class="add-role-dropdown">
+                <select name="department" class="dropdown" id="filterDepartment">
+                    <option value="" disabled selected>Department</option>
+                    <option value="UI/UX">UI/UX</option>
+                    <option value="Product Engg">Product Engg</option>
+                    <option value="Quality Assurance">Quality Assurance</option>
+                    <option value="Marketing">Marketing</option>
+                </select>
+                <select name="location" class="dropdown" id="filterLocation">
+                    <option value="" disabled selected>Location</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Banglore">Banglore</option>
+                    <option value="Mumbai">Mumbai</option>
+                </select>
+            </div>
+        </div>
+        <div class="order-btn d-flex">
+            <div><button id="reset" class="add-cursor-pointer">Reset</button></div>
+            <div><button id="apply" class="add-cursor-pointer">Apply</button></div>
+        </div>
+    </div>
+
+    <!-- main content section  -->
+    <div class="role-container d-flex" id="card-container">
+        <div class="role-card" *ngFor="let role of roles">
+            <div class="role-name" >
+                <span>{{role.name}}</span>
+                <img src="assets/edit.svg" alt="edit-icon" />
+            </div>
+            <div class="department">
+                <div class="dept">
+                    <img src="assets/team.svg" alt="team" />
+                    <span id="heading">Department</span>
+                </div>
+                <span id="dept-name">{{role.department}}</span>
+
+            </div>
+            <div class="town">
+                <div class="dept">
+                    <img src="assets/location.svg" alt="location-icon" />
+                    <span id="heading">Location</span>
+                </div>
+                <span id="town-name">{{role.location}}</span>
+            </div>
+            <div class="total-emp">
+                <span id="heading">Total Employees</span>
+                <div class="icons">
+                    <!-- <img src="assets/profie-icon.png" alt="profile-icon" id="profile1" />
+                    <img src="assets/profie-icon.png" alt="profile-icon" id="profile2" />
+                    <img src="assets/profie-icon.png" alt="profile-icon" id="profile3" />
+                    <img src="assets/profie-icon.png" alt="profile-icon" id="profile4" />
+                    <span id="total-cnt">+43</span> -->
+                </div>
+            </div>
+            <a alt="role details" (click)="openEmployeeDetails(role.name)">
+                <div class="view-emp">
+                    <span>View All Employees</span>
+                    <img src="assets/icons/view.png" alt="right-arrow" />
+                </div>
+            </a>
+        </div>
+    </div>
+</main>

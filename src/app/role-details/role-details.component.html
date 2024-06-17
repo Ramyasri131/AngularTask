@@ -1,0 +1,62 @@
+<main class="view-employees">
+    <!--add employee-->
+    <div class="add-employee add-cursor-pointer d-flex">
+        <div class="add-employee-desc">
+            <div class="roles-employees d-flex">
+                <span id="role"><a href="role.html" title="role.html">Roles</a>
+                    <img src="../assets/icons/chevron.png" alt="right-arrow" id="role-right" />
+                    <span id="role" class="add-employee-role-name"></span>
+                    <img src="../assets/icons/chevron.png" alt="right-arrow" id="role-right" />
+                    <span id="role">Employees</span>
+                </span>
+            </div>
+            <div class="all-roles">All the roles are configured here</div>
+
+        </div>
+        <button class="add-employee-btn add-cursor-pointer d-flex">
+            <img src="../assets/icons/add.svg" alt="export-icon" id="export-icon" />
+            <span>ADD EMPLOYEE</span>
+        </button>
+    </div>
+
+    <!--Role description-->
+    <div class="role-desc">
+        <p id="role-data">Role Description</p>
+        <span id="add-role-description"></span>
+    </div>
+
+    <!-- content of page -->
+    <div class="details-section d-flex" id="details-card-container" *ngFor="let user of employeesDisplay">
+        <div class="details-card">
+            <div class="card-content">
+                <div class="employee-details">
+                    <img src="assets/profie-icon.png" alt="profile icon"/>
+                    <div class="employee-name">
+                        <span id="emp-name">{{user.firstName+" "+user.lastName}}</span>
+                        <span>{{user.jobTitle}}</span>
+                    </div>
+                </div>
+                <div class="employee-info">
+                    <img src="assets/icons/emp-id.svg" alt="emp_id"/>
+                    <span>{{user.id}}</span>
+                </div>
+                <div class="employee-info">
+                    <img src="assets/icons/email-icon.svg" alt="emp_id"/>
+                    <span>{{user.email}}</span>
+                </div>
+                <div class="employee-info">
+                    <img src="assets/team.svg" alt="emp_id"/>
+                    <span>{{user.department}}</span>
+                </div>
+                <div class="employee-info">
+                    <img src="assets/icons/location.svg" alt="emp_id"/>
+                    <span>{{user.location}}</span>
+                </div>
+            </div>
+            <div class="view">
+                <span>View</span>
+                <img src="assets/icons/view.png" alt="view-logo"/>
+            </div>
+        </div>
+    </div>
+</main>

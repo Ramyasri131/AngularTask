@@ -1,0 +1,23 @@
+.d-flex{
+    display: flex;
+}
+
+#side-nav {
+    /* width: 50%; */
+    max-height: 100vh;
+    background-color: #ffffff;
+    flex-direction: column;
+    position: relative;
+}
+
+.side-bar {
+    width:20%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.header {
+    width:80%;
+    margin-top: 0.5rem;
+}
+

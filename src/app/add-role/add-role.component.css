@@ -1,0 +1,199 @@
+.d-flex{
+    display: flex;
+}
+
+.add-role-form {
+    /* display: flex; */
+    height: calc(100vh - 100px);
+    overflow: auto;
+    margin-top: 1rem;
+}
+
+.add-role-form::-webkit-scrollbar {
+    display: none;
+}
+
+.add-role-container {
+    margin-left: 0.5rem;
+    width: 100%;
+    flex-direction: column;
+
+}
+
+.details {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.page-heading {
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 0.5rem;
+}
+
+.employee-details {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.employee-details label {
+    font-weight: 500;
+}
+
+.employee-details input[type=text] {
+    width: 13rem;
+    height: 1.5rem;
+    outline: none;
+    border: 1px solid #acadad;
+    border-radius: 3px;
+}
+
+.employee-details select {
+    width: 13rem;
+    height: 1.9rem;
+    border: 1px solid #acadad;
+    outline: none;
+    border-radius: 3px;
+}
+
+.employee-details select option[value=""][disabled] {
+    display: none;
+}
+
+
+.employee-details textarea {
+    width: 28.5rem;
+    height: 10rem;
+    resize: none;
+    outline: none;
+    border-radius: 3px;
+    border: 1px solid #acadad;
+}
+
+.employee-details input[type=text]:focus,
+.employee-details select:focus,
+.employee-details textarea:focus {
+    border: 1px solid ;
+}
+
+.form-buttons {
+    margin-top: 1rem;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.form-buttons button {
+    height: 2rem;
+    width: 8rem;
+    border-radius: 5px;
+}
+
+.cancel-button {
+    border: none;
+    outline: none;
+    background: #FDF2F2;
+    color:red;
+}
+
+.submit-button {
+    border: none;
+    outline: none;
+    background:rgb(216, 19, 19);
+    color:  #ffffff;
+}
+
+.edit-button {
+    border: none;
+    outline: none;
+    display: none;
+    background: #5f6164;
+    color:  #ffffff;
+}
+
+.save-button {
+    border: none;
+    outline: none;
+    display: none;
+    background: #5f6164;
+    color:  #ffffff;
+}
+
+.error {
+    color:red;
+}
+
+.alert {
+    border: 1px solid red !important;
+}
+
+/* multiselect */
+.searchEmployee {
+    width:45%;
+    display: flex;
+    gap: 3rem;
+    background-color:  #ffffff;
+    border: 1px solid #acadad;
+    padding: 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.add-role-downarrow {
+    width: 1rem;
+    height: 1rem;
+}
+
+.asssign-employees-container {
+    display: none;
+    flex-direction: column;
+    width:45%;
+    background-color:  #ffffff;
+    padding: 0.5rem;
+    border-radius: 3px;
+    gap: 0.5rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.assign-employee-details img {
+    width: 1rem;
+    height: 1rem;
+}
+
+.assign-employee {
+    display: flex;
+    justify-content: space-between;
+}
+
+.assign-employee-details {
+    display: flex;
+    gap: .1rem;
+    font-weight: 500;
+    font-size: 13.5px;
+}
+
+.employee-icon-after {
+    right: 0;
+    position: absolute;
+    margin-top: -1rem;
+}
+
+@media screen and (max-width:800px) {
+    .role-card {
+        width: 85%;
+    }
+
+    .employee-details textarea {
+        width: fit-content;
+    }
+
+    .filter-section {
+        gap: 1rem;
+    }
+}
+
+@media screen and (max-width:250px) {
+    .add-role {
+        font-size: 10px;
+    }
+}
